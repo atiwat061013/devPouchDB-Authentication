@@ -1,0 +1,7 @@
+{
+  "name": "devPouchDB-Authentication",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

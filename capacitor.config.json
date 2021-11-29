@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "devPouchDB-Authentication",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}
