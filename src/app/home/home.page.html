@@ -1,20 +1,101 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      PouchDB Authentication
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>SignUp</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <form [formGroup]="signUpForm" (ngSubmit)="submitsignUpForm()" novalidate>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+        <ion-item lines="full">
+          <ion-label position="floating">Username</ion-label>
+          <ion-input formControlName="username" type="username" ></ion-input>
+        </ion-item>
+        <span class="error ion-padding" *ngIf="isSubmittedSignUp && errorSignUpControl.username.errors?.required">
+          Username is required.
+        </span>
+        <ion-item lines="full">
+          <ion-label position="floating">Password</ion-label>
+          <ion-input maxlength="10" formControlName="password" type="password" required></ion-input>
+        </ion-item>
+        <span class="error ion-padding" *ngIf="isSubmittedSignUp && errorSignUpControl.password.errors?.required">
+          Password is required.
+        </span>
+        <ion-row>
+          <ion-col>
+            <ion-button type="submit" expand="block">signUp</ion-button>
+          </ion-col>
+        </ion-row>
+      </form>
+    </ion-card-content>
+  </ion-card>
+
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>SignUpAdmin</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <form [formGroup]="signUpAdminForm" (ngSubmit)="submitsignUpAdminForm()" novalidate>
+
+        <ion-item lines="full">
+          <ion-label position="floating">Username</ion-label>
+          <ion-input formControlName="username" type="username" ></ion-input>
+        </ion-item>
+        <span class="error ion-padding" *ngIf="isSubmittedSignUpAdmin && errorSignUpAdminControl.username.errors?.required">
+          Username is required.
+        </span>
+        <ion-item lines="full">
+          <ion-label position="floating">Password</ion-label>
+          <ion-input maxlength="10" formControlName="password" type="password" required></ion-input>
+        </ion-item>
+        <span class="error ion-padding" *ngIf="isSubmittedSignUpAdmin && errorSignUpAdminControl.password.errors?.required">
+          Password is required.
+        </span>
+        <ion-row>
+          <ion-col>
+            <ion-button type="submit" expand="block">SignUpAdmin</ion-button>
+          </ion-col>
+        </ion-row>
+      </form>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>SignIn</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <form [formGroup]="signInForm" (ngSubmit)="submitsignInForm()" novalidate>
+
+        <ion-item lines="full">
+          <ion-label position="floating">Username</ion-label>
+          <ion-input formControlName="username" type="username" ></ion-input>
+        </ion-item>
+        <span class="error ion-padding" *ngIf="isSubmittedSignIn && errorSignInControl.username.errors?.required">
+          Username is required.
+        </span>
+        <ion-item lines="full">
+          <ion-label position="floating">Password</ion-label>
+          <ion-input maxlength="10" formControlName="password" type="password" required></ion-input>
+        </ion-item>
+        <span class="error ion-padding" *ngIf="isSubmittedSignIn && errorSignInControl.password.errors?.required">
+          Password is required.
+        </span>
+        <ion-row>
+          <ion-col>
+            <ion-button type="submit" expand="block">SignIn</ion-button>
+          </ion-col>
+        </ion-row>
+      </form>
+    </ion-card-content>
+  </ion-card>
+
 </ion-content>

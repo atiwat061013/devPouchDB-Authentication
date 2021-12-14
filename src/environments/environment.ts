@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  db: "http://root:Seen_2021@115.31.187.179:5984",
 };
 
 /*
